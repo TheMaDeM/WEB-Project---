@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="padding-left: 100px; padding-top: 50px">
+    <div class="card border-dark" style="width: 60rem;">
+        <img src="/static/img/{{  ad.image  }}.png" class="card-img-top" alt="Картинки нет">
+        <div class="card-body" style="background-color: #000000">
+            <div class="card-title text-center">
+                <h1>{{ad.title}}</h1>
+            </div>
+            <div class="card-text border-top border-warning">
+                <h2>Цена: {{ad.price}} рублей</h2>
+                <h3>Владелец: <a href="/profile/{{ ad.user.id }}">{{ad.user.name}}</a></h3>
+                <h3>Номер телефона: {{ad.user.phone_num}} </h3>
+                <h5>Описание: {{ad.content}}</h5>
+                <div class="border-top border-warning">
+                    ID объявления: {{ad.id}}
+                </div>
+                <div>Дата публикации: {{ad.created_date}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
